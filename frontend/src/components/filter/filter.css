@@ -1,0 +1,57 @@
+/* ตัวคอนเทนเนอร์หลักของฟิลเตอร์ */
+.filter {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto; /* จัดให้อยู่กลางจอ */
+    background-color: #f9f9f9; /* สีพื้นหลังอ่อน */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ช่องอินพุตสำหรับค้นหา */
+.filter .filter-input {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* เพิ่มเอฟเฟกต์ขอบเมื่อโฟกัส */
+.filter .filter-input:focus {
+    border-color: #3498db;
+}
+
+/* สไตล์สำหรับแต่ละไอเท็มที่แสดงผล */
+.filter .item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* ชื่อของไอเท็ม */
+.filter .item p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+/* เพิ่มช่องว่างระหว่างข้อความ */
+.filter .item p:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+/* Divider หรือเส้นคั่น */
+.filter .divider {
+    margin: 15px 0;
+    height: 1px;
+    background-color: #eee;
+    border: none;
+}
