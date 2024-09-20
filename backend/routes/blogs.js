@@ -26,4 +26,29 @@ router.get('/api/blog/:id',(req,res)=>{
     .catch(error => console.log(error))
 })
 
+
+// this route never test routes  **** don't forgot test later.
+router.post('/api/blog/create',(req,res)=>{
+    Todo.create(req.body)
+        .then(post => res.json(post))
+        .catch(err=> console.log(err))
+})
+
+router.put('/api/blog/update/:id',(req,res)=>{
+    const id = req.params.id;
+    Todo.findByIdAndUpdate({_id:id},{
+        name : req.body.name,
+        description : req.body.description,
+        tools : req.body.tools
+    })  .then(todo => res.json(todo))
+        .catch(err => console.log(err))
+})
+
+router.delete('/api/blog/delete/:id', (req,res)=>{
+    const id = req.params.id;
+    Todo.findByIdAndDelete({_id:id})
+        .then(todo => res.json(todo))
+        .catch(err => console.log(err))
+})
+
 module.exports = router;
